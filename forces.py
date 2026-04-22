@@ -1,3 +1,15 @@
+"""
+forces.py considers the local forces when knowing the local velocity
+
+Three different interaction models are included:
+    -BB
+    -Columb friction
+    -Viscous fluid
+
+
+"""
+
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -17,9 +29,10 @@ ForceModel = Literal["coulomb", "viscous", "bb"]
 class CoulombParams:
     """
     Anisotropic Coulomb-style RFT:
-    tangential force ~ cos(phi), normal force ~ A sin(phi)
+    tangential force ~ cos(phi), normal force ~ A sin(phi) 
+    A is related to the drag anistropic
     """
-    A: float = 2.0
+    A: float = 1.0
     sigmoid_gain: float = 100.0
     speed_scale: float = 2.0 * np.pi
 
@@ -64,7 +77,7 @@ def rft_local_wrench(
     """
     Local segment-frame wrench [Fx, Fy, M]^T.
 
-    Only three models are kept:
+    Three models are kept:
     - coulomb
     - viscous
     - bb

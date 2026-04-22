@@ -1,3 +1,8 @@
+"""
+kinematics.py calculate the trans matrix for kinematics for series-connected robot
+
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
