@@ -42,8 +42,8 @@ python experiment_snapshots.py
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | N | 6 | Number of body segments |
-| L | 1.3 m | Half-segment length |
-| L_leg | 0.8 m | Leg length |
+| L | 13 cm | Half-segment length |
+| L_leg | 8 cm | Leg length |
 | T_cycle | 5 s | Gait period |
 | n_cycles | 5 | Simulation duration |
 
