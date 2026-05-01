@@ -60,7 +60,7 @@ class BBParams:
 
 
 def _smooth_sign(x: float, gain: float) -> float:
-    return 2.0 / (1.0 + np.exp(gain * x)) - 1.0
+    return 2.0 / (1.0 + np.exp(np.clip(gain * x, -500.0, 500.0))) - 1.0
 
 
 def _angle_from_velocity(vx: float, vy: float) -> float:
